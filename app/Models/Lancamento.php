@@ -24,11 +24,14 @@ class Lancamento extends Model
                         'updated_at',
                         'deleted_at'
                     ];
+
     protected $fillable = [
                             'id_user',
                             'id_centro_custo',
                             'descricao',
-                            'observacoes'
+                            'observacoes',
+                            'dt_faturamento',
+                            'valor'
                         ];
     /*
      |----------------------------------------
@@ -39,7 +42,7 @@ class Lancamento extends Model
 
      public function usuario()
      {
-        return $this->belongsTo(User::class,'id_user','id_user');
+        return $this->hasOne(User::class,'id_user','id_user');
      }
 
      public function centroCusto()

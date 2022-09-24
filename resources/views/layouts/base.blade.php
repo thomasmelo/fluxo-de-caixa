@@ -43,7 +43,7 @@
                            <i class="bi bi-house-door-fill"></i>
                            Home
                         </a>
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('lancamento.index') }}">
                             <i class="bi bi-piggy-bank-fill"></i>
                             Lancamentos
                         </a>

@@ -67,7 +67,7 @@
                 <label for="dt_faturamento" class="form-label">DT Faturamento*</label>
                 <input type="date" name="dt_faturamento" id="dt_faturamento"
                 class="form-control"
-                value="{{ $lancamento ? $lancamento->dt_faturamento : old('dt_faturamento') }}"
+                value="{{ $lancamento ? $lancamento->dt_faturamento->format('Y-m-d') : old('dt_faturamento') }}"
                 required>
             </div>
             <div class="form-group col-md-2">

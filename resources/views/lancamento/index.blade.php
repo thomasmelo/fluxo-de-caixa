@@ -17,6 +17,28 @@
         - 
         R$ {{ $lancamentos->sum('valor') }}
     </h2>
+    {{-- FORMULARIO DE PESQUISA --}}
+    <form action="{{ route('lancamento.index') }}" method="get">
+        {{-- @csrf --}}
+        {{-- search --}}       
+        <input type="text" 
+            name="pesquisar" 
+            id="pesquisar"
+            value="{{ old('pesquisar') }}"
+            placeholder="Digite o termo a ser pesquisado...">
+
+            <input type="date" 
+            name="dt_inicio" 
+            id="dt_inicio"
+            placeholder="inicio">
+            <input type="date" 
+            name="dt_fim" 
+            id="dt_fim"
+            placeholder="fim">
+        <input type="submit" value="Pesquisar">
+    </form>
+    {{-- /FORMULARIO DE PESQUISA --}}
+
     <table class="table table-striped table-border">
         <thead>
             <tr>

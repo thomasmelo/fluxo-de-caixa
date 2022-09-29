@@ -54,7 +54,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($lancamentos->get() as $lancamento)                
+            @foreach ($lancamentos as $lancamento)                
             <tr>
                 <td>
                     <a href="{{ route('lancamento.edit', ['id'=>$lancamento->id_lancamento]) }}" class="btn btn-success">
@@ -74,5 +74,8 @@
         </tbody>
     </table>
 
+        <div class="py-4">
+            {{ $lancamentos->appends([ 'pesquisar' => request()->get('pesquisar', '')])->links() }}
+        </div>
     
 @endsection

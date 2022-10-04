@@ -73,9 +73,21 @@
             @endforeach
         </tbody>
     </table>
+    {{-- PAGINAÇÃO --}}
+    <div>
+        {{ 
+            $lancamentos
+            ->appends(
+                [ 
+                    'pesquisar' => request()->get('pesquisar', ''),
+                    'dt_inicio' => request()->get('dt_inicio', ''),
+                    'dt_fim'    => request()->get('dt_fim', ''),
 
-        <div class="py-4">
-            {{ $lancamentos->appends([ 'pesquisar' => request()->get('pesquisar', '')])->links() }}
-        </div>
+                ]
+                )
+            ->links() 
+        }}
+    </div>
+
     
 @endsection

@@ -31,7 +31,8 @@ class Lancamento extends Model
                             'descricao',
                             'observacoes',
                             'dt_faturamento',
-                            'valor'
+                            'valor',
+                            'arquivo'
                         ];
     /*
      |----------------------------------------
